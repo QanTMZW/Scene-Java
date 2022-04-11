@@ -1,0 +1,60 @@
+﻿Michael Zou Wu
+CISC 3140
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.awt.Color; 
+import java.awt.FlowLayout; 
+import java.awt.event.ActionEvent; 
+import java.awt.event.ActionListener; 
+import javax.swing.JButton; 
+import javax.swing.JFrame; 
+import javax.swing.JLabel; 
+import javax.swing.JTextField; 
+
+
+public class colorshift { 
+public static void main(String[] args) { 
+JFrame frame = new JFrame("Image Color Changer "); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+JLabel label = new JLabel();
+label.setText("Enter a hex color you like"); 
+JTextField colorField = new JTextField(10);
+JButton butt = new JButton("Change Color"); 
+JButton buttChangedColor = new JButton("Enter your favorite color above ");
+butt.addActionListener(new ActionListener() 
+{ 
+public void actionPerformed(ActionEvent e) 
+{ String color = colorField.getText(); buttChangedColor.setBackground(Color.decode(color)); buttChangedColor.setOpaque(true); 
+buttChangedColor.setText("Oh look, my color was changed"); 
+} 
+}
+); 
+frame.getContentPane().setLayout(new FlowLayout()); frame.getContentPane().add(label); 
+frame.getContentPane().add(colorField); frame.getContentPane().add(butt); 
+frame.getContentPane().add(buttChangedColor); 
+frame.pack(); 
+frame.setSize(475, 150); 
+frame.setVisible(true);
+ }
+ 
+}
